@@ -1,0 +1,6 @@
+---
+# file: host_vars/ckan01
+
+ansible_ssh_host: localhost
+
+# vim: set sw=2 ts=2:

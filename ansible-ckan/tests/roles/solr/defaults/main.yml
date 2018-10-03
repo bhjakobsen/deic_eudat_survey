@@ -1,0 +1,44 @@
+---
+# file: defaults/main.yml
+
+# solr version to install
+solr_version: 7.4.0
+
+# solr tarball name. Infered from solr version
+solr_tarball: solr-{{ solr_version }}.tgz
+
+# solr mirror url
+solr_mirror_url: https://archive.apache.org/dist/lucene/solr/{{ solr_version }}/{{ solr_tarball }}
+
+# sha256 checksum for solr tarball
+#Fjernet da det ikke virker -Asger
+#solr_sha256sum: 917b2f97ad1a6781a6c263617c7541208840cf5867dafc88e7f0dd3546c94986
+
+# directory in which solr-tarball will be extracted in
+solr_prefix_dir: /opt
+
+# directory in which solr will be installed
+solr_install_dir: /opt/solr
+
+# will contain solr log files, core(s)
+solr_var_dir: /var/solr
+
+# default port which solr will listen & serve requests from
+solr_port: 8983
+
+# solr system user, also owner of solr files/dirs
+solr_user: {
+  name: "solr",
+  system: "yes",
+  home_path: "/home/solr",
+  description: "SOLR User"
+}
+
+# solr java min/max memory heap allocation sizes
+solr_java_mem: "-Xms1024m -Xmx1024m"
+
+# default solr core used by CKAN
+solr_cores:
+    - ckan_default
+
+# vim: set sw=2 ts=2:

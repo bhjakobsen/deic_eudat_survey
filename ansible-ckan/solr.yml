@@ -1,0 +1,18 @@
+---
+# file: solr.yml
+
+- hosts: solr
+  become: yes
+#  user: provisioning
+  become_method: sudo
+  user: asger
+  vars_files:
+    - vars/all.yml
+  roles:
+    - { role: solr, when: ansible_distribution == "Ubuntu", tags: solr }
+
+  vars:
+    ansible_become_pass: Johan1412##
+
+
+# vim: set sw=2 ts=2:

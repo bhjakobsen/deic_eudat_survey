@@ -1,0 +1,17 @@
+---
+# file: ckan.yml
+
+- hosts: ckan
+  become: yes
+#  user: provisioning
+  user: asger
+  vars_files:
+    - vars/all.yml
+  roles:
+    - { role: apache, when: ansible_distribution == "Ubuntu", tags: apache }
+    - { role: nginx, when: ansible_distribution == "Ubuntu", tags: nginx }
+    - { role: ckan, when: ansible_distribution == "Ubuntu", tags: ckan }
+
+  vars:
+    ansible_become_pass: Johan1412##
+# vim: set sw=2 ts=2:
