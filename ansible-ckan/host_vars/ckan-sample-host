@@ -2,7 +2,7 @@
 # file: host_vars/ckan-sample-host
 
 # ip address/hostname of the remote host
-ansible_ssh_host: localhost
+ansible_ssh_host: 192.168.56.101
 
 # you can override values specified in defaults/main.yml - role-default
 # variables - in groups vars or host vars files as shown below:
@@ -27,14 +27,14 @@ ckan_db: {
   username: "ckan_portal",
   password: ">C4fMsJb.*Va-rV2",
   dbname: "ckan_portal",
-  dbhost: "localhost"
+  dbhost: "192.168.56.101"
 }
 
 # CKAN solr core name
 ckan_solr_core_name: "ckan_portal_core"
 
 # solr hostname/ip address
-ckan_sorl_host: "localhost"
+ckan_sorl_host: "192.168.56.101"
 
 # CKAN solr core URL - derived from solr_host & solr_core_name
 ckan_solr_url: "http://{{ ckan_sorl_host }}:8983/solr/{{ ckan_solr_core_name }}"

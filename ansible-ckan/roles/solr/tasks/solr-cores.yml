@@ -8,9 +8,14 @@
   file: dest={{ solr_var_dir }}/data/{{ item }}/conf state=directory owner={{ solr_user.name }} group={{ solr_user.name }} mode=0755
   with_items: "{{ solr_cores }}"
 
+- name: Create Solr core conf dir2
+  file: dest={{ solr_conf_dir }}{{ item }}/conf state=directory owner={{ solr_user.name }} group={{ solr_user.name }} mode=0755
+  with_items: "{{ solr_cores }}"
+
+
 - name: Populate Solr core conf dir
-#  command: /usr/bin/rsync -a {{ solr_install_dir }}/server/solr/configsets/basic_configs/conf/ {{ solr_var_dir }}/data/{{ item }}/conf/ creates={{ solr_var_dir }}/data/{{ item }}/conf/solrconfig.xml
-  command: /usr/bin/rsync -a {{ solr_install_dir }}/server/solr/configsets/_default/conf/ {{ solr_var_dir }}/data/{{ item }}/conf/ creates={{ solr_var_dir }}/data/{{ item }}/conf/solrconfig.xml
+  command: /usr/bin/rsync -a {{ solr_install_dir }}/server/solr/configsets/basic_configs/conf/ {{ solr_var_dir }}/data/{{ item }}/conf/ creates={{ solr_var_dir }}/data/{{ item }}/conf/solrconfig.xml
+#  command: /usr/bin/rsync -a {{ solr_install_dir }}/server/solr/configsets/_default/conf/ {{ solr_var_dir }}/data/{{ item }}/conf/ creates={{ solr_var_dir }}/data/{{ item }}/conf/solrconfig.xml
   with_items: "{{ solr_cores }}"
 
 - name: Create core.properties placeholder

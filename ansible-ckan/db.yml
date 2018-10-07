@@ -4,12 +4,12 @@
 - hosts: db
   become: yes
 #  user: provisioning
-  user: asger
+  user: bjhj
   vars_files:
     - vars/all.yml
   roles:
     - { role: postgresql, when: ansible_distribution == "Ubuntu", tags: postgresql }
 
   vars:
-    ansible_become_pass: Johan1412##
+    ansible_become_pass: Rasmus12
 # vim: set sw=2 ts=2:

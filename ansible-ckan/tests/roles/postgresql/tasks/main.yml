@@ -10,7 +10,7 @@
 - name: Install postgresql
   apt: name={{ item }} update_cache=yes state=present
   with_items:
-  # Ændret af /Asger
+  # Ændret af /bjhj
     - python-psycopg2
     - libpq-dev
     - postgresql-{{ pg_version }}

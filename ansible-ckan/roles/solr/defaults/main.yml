@@ -2,16 +2,18 @@
 # file: defaults/main.yml
 
 # solr version to install
-solr_version: 7.4.0
+solr_version: 7.5.0
 
 # solr tarball name. Infered from solr version
 solr_tarball: solr-{{ solr_version }}.tgz
 
 # solr mirror url
-solr_mirror_url: https://archive.apache.org/dist/lucene/solr/{{ solr_version }}/{{ solr_tarball }}
+
+solr_mirror_url:  http://dk.mirrors.quenda.co/apache/lucene/solr/7.5.0/solr-7.5.0.tgz
+#solr_mirror_url: https://archive.apache.org/dist/lucene/solr/{{ solr_version }}/{{ solr_tarball }}
 
 # sha256 checksum for solr tarball
-#Fjernet da det ikke virker -Asger
+#Fjernet da det ikke virker -bjhj
 #solr_sha256sum: 917b2f97ad1a6781a6c263617c7541208840cf5867dafc88e7f0dd3546c94986
 
 # directory in which solr-tarball will be extracted in

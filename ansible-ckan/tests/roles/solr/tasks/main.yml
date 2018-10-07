@@ -3,7 +3,7 @@
 - name: Install gnupg
   apt: name={{ item }} update_cache=yes state=present
   with_items:
-  # Ændret af /Asger
+  # Ændret af /bjhj
     - gnupg
 
 - name: Install Solr deps

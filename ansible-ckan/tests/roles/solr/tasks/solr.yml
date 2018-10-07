@@ -5,7 +5,7 @@
 
 - name: Get Solr tarball
   #get_url: url={{ solr_mirror_url }} dest={{ solr_prefix_dir }}/{{ solr_tarball }} sha256sum={{ solr_sha256sum }}
-  #sha256sum fjernet, da det ikke virker - Asger
+  #sha256sum fjernet, da det ikke virker - bjhj
   get_url: url={{ solr_mirror_url }} dest={{ solr_prefix_dir }}/{{ solr_tarball }}
   register: get_url_result
 

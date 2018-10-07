@@ -2,7 +2,7 @@
 # file: host_vars/solr-sample-host
 
 # ip address/hostname of the remote host
-ansible_ssh_host: 192.168.33.11
+ansible_ssh_host: 192.168.56.101
 
 # you can override values specified in defaults/main.yml - role-default
 # variables - in groups vars or host vars files as shown below:
