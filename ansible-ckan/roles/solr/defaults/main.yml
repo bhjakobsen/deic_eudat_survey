@@ -20,7 +20,7 @@ solr_mirror_url:  http://dk.mirrors.quenda.co/apache/lucene/solr/7.5.0/solr-7.5.
 solr_prefix_dir: /opt
 
 # directory in which solr will be installed
-solr_install_dir: /opt/solr
+solr_install_dir: /opt/solr-7.5.0
 
 # will contain solr log files, core(s)
 solr_var_dir: /var/solr
