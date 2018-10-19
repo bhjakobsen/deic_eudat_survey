@@ -1,7 +1,7 @@
 ---
 # file: tasks/main.yml
 - name: Install gnupg
-  apt: name={{ item }} update_cache=yes state=present
+  apt: name={{ item }} update_cache=yes state=latest
   with_items:
   # Ændret af /bjhj
     - gnupg
@@ -14,7 +14,7 @@
 
 - name: Install add-apt-repostory
   become: yes
-  apt: name=software-properties-common state=latest
+  apt: name=software-properties-common  state=latest update-cache=yes  autoclean=yes
 
 - name: Add Oracle Java Repository
   become: yes
@@ -26,11 +26,12 @@
 
 - name: Install Oracle Java 8
   become: yes
-  apt: name={{item}} state=latest
+  apt: name={{item}} state=latest update-cache=yes force=yes
   with_items:
     - oracle-java8-installer
     - ca-certificates
     - oracle-java8-set-default
+
 
 - include: solr.yml
   tags: solr

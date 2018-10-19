@@ -1,17 +1,17 @@
 # ckan server(s)
 # apache, nginx & ckan will be deployed to hosts in this(ckan) group
 [ckan]
-192.168.56.101 ansible_python_interpreter=/usr/bin/python
+192.168.56.102 ansible_python_interpreter=/usr/bin/python
 #ckan-sample-host
 
 # database(postgresql) server(s).
 # postgresql will be deployed to hosts in this(db) group
 [db]
-192.168.56.101 ansible_python_interpreter=/usr/bin/python
+192.168.56.102 ansible_python_interpreter=/usr/bin/python
 #db-sample-host
 
 # solr server(s)
 # solr will be deployed to hosts in this(solr) group
 [solr]
-192.168.56.101 ansible_python_interpreter=/usr/bin/python
+192.168.56.102 ansible_python_interpreter=/usr/bin/python
 #solr-sample-host

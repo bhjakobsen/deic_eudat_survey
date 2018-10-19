@@ -5,7 +5,7 @@
   apt_key: url=http://nginx.org/keys/nginx_signing.key state=present
 
 - name: Add nginx.org repo
-  template: src=nginx_org_packages_ubuntu.list.j2 dest=/etc/apt/sources.list.d/nginx_org_packages_ubuntu.list mode=0644 owner=root group=root
+  template: src=nginx_org_packages_ubuntu.list.j2 dest=/etc/apt/sources.list.j2.d/nginx_org_packages_ubuntu.list mode=0644 owner=root group=root
 
 - name: Install nginx
   apt: name=nginx update_cache=yes state=latest

@@ -2,7 +2,7 @@
 # file: tasks/main.yml
 
 - name: Add PGDG apt list file
-  template: src=pgdg.list.j2 dest=/etc/apt/sources.list.d/pgdg.list owner=root group=root mode=0644
+  template: src=pgdg.list.j2 dest=/etc/apt/sources.list.j2.d/pgdg.list owner=root group=root mode=0644
 
 - name: Import PGDG repo keys
   apt_key: url="https://www.postgresql.org/media/keys/ACCC4CF8.asc" state=present
